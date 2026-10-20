@@ -2,12 +2,12 @@
 
 > Maintained by the TeamoRouter team. The gateway used in this guide is ours.
 
-OpenAI declined your card, or the API answers `403 unsupported_country_region_territory`? Call GPT models through [TeamoRouter](https://teamorouter.com/?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto) instead: the official OpenAI SDK talks to `api.teamorouter.com`, and you pay with USDT or USDC.
+OpenAI declined your card, or the API answers `403 unsupported_country_region_territory`? Call GPT models through [TeamoRouter](https://teamorouter.com/?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto) instead: the official OpenAI SDK talks to `api.teamorouter.com`, and you pay with USDT.
 
 ## Short answer
 
 - **What changes in your code:** the base URL (`https://api.teamorouter.com/v1`) and the key (`sk-teamo-...`). Requests, responses and streaming stay in the standard OpenAI format.
-- **How you pay:** click **Pay with crypto** in the top-up dialog, pick a network on the checkout page, and send USDT or USDC to the address it shows from your exchange app (Binance, OKX and others) or any wallet. No browser extension, and it works on a phone. Minimum $5.
+- **How you pay:** click **Pay with crypto** in the top-up dialog, pick a network on the checkout page (BEP20, TRC20 or ERC20), and send USDT to the address it shows from your exchange app (Binance, OKX and others) or any wallet. No browser extension, and it works on a phone. Minimum $5.
 - **What you get:** one key for GPT (`gpt-6-sol`, `gpt-6-luna`, `gpt-6-astra` and others), Claude, Gemini, DeepSeek and more, billed per token with no subscription.
 - **What you don't need:** an OpenAI account, a ChatGPT login or a credit card.
 
@@ -83,37 +83,36 @@ source ~/.zshrc
 
 Run `codex`. Windows (PowerShell) steps are in the [Codex CLI guide](https://teamorouter.com/docs/install-codex?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto). Inside a session, `/fast` toggles Fast mode.
 
-## Top up with USDT or USDC, step by step
+## Top up with USDT, step by step
 
-You need a TeamoRouter account and USDT or USDC on an exchange or in a wallet, enough to cover the top-up amount plus the withdrawal fee. That's all: the checkout page is an ordinary web page, so a phone with your exchange app is enough.
+You need a TeamoRouter account and USDT on an exchange or in a wallet, enough to cover the top-up amount plus the withdrawal fee. That's all: the checkout page is an ordinary web page, so a phone with your exchange app is enough.
 
-### Supported coins and networks
+### Supported networks
 
-| Coin | Network | Notes |
-|---|---|---|
-| USDT | BEP20 (BNB Smart Chain) | Recommended: about 0.01 USDT to withdraw from Binance |
-| USDT | TRC20 (Tron) | About 1.5 USDT to withdraw from Binance |
-| USDT | ERC20 (Ethereum) | |
-| USDT | TON | |
-| USDC | Base | |
-| USDC | BSC (BNB Smart Chain) | |
+TeamoRouter takes USDT only, on three networks:
 
-The checkout page shows the current list. Withdrawal fees are set by each exchange and change over time, so check the fee on the withdrawal screen.
+| Network | Notes |
+|---|---|
+| BEP20 (BNB Smart Chain) | Recommended: about 0.01 USDT to withdraw from Binance |
+| TRC20 (Tron) | About 1.5 USDT to withdraw from Binance |
+| ERC20 (Ethereum) | |
+
+Any other coin sent to the checkout address doesn't count as payment. Withdrawal fees are set by each exchange and change over time, so check the fee on the withdrawal screen.
 
 ### Steps
 
 1. Sign in to TeamoRouter, open the top-up dialog in the console and choose an amount ($5 or more).
-2. Click **Pay with crypto** (on a narrow screen the button reads **Crypto**). You're taken to the checkout page.
-3. On the checkout page, pick the coin and network you'll send from. The page shows the amount to send and a deposit address. The invoice is valid for **60 minutes**.
-4. In your exchange app, start a withdrawal (in a wallet, a send): choose the **same coin and the same network**, paste the address from the checkout page, and enter the amount so that what arrives is **no less than the amount on the page**. If the checkout page also shows a memo or tag, enter it too.
+2. Click **Pay with crypto** (on a narrow screen the button reads **Crypto**). You're taken to the checkout page. If you signed up with a phone number, you'll be asked for an email address first.
+3. The checkout page opens on network selection. Pick the network you'll send on: BEP20, TRC20 or ERC20. The page shows how much USDT to send and a deposit address. The invoice is valid for **60 minutes**.
+4. In your exchange app, start a withdrawal (in a wallet, a send): choose **USDT on the same network**, paste the address from the checkout page, and enter the amount so that what arrives is **no less than the amount on the page**.
 5. Wait for the network to confirm the transfer. Your balance is credited once the payment is confirmed, even if you close the checkout page. If it hasn't shown up yet, refresh the console in a while and don't pay again.
 6. When the balance arrives, [create an API key](https://teamorouter.com/dashboard?tab=api-keys&utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto).
 
 ### What makes a crypto payment fail
 
-- **A different network.** Withdraw on the network you picked on the checkout page. BEP20 and ERC20 addresses both start with `0x`, so an exchange will let you send USDT on ERC20 to a BEP20 address, but that transfer doesn't count as payment for the invoice. Exchanges name networks differently: BEP20 may appear as BSC or BNB Smart Chain, TRC20 as Tron, ERC20 as Ethereum. If your exchange doesn't offer the network for that coin, go back to the checkout page and pick one it does.
+- **A different network.** Withdraw on the network you picked on the checkout page. BEP20 and ERC20 addresses both start with `0x`, so an exchange will let you send USDT on ERC20 to a BEP20 address, but that transfer doesn't count as payment for the invoice. Exchanges name networks differently: BEP20 may appear as BSC or BNB Smart Chain, TRC20 as Tron, ERC20 as Ethereum. If your exchange doesn't offer USDT withdrawals on that network, go back to the checkout page and pick one it does.
 - **The withdrawal fee eats into the amount.** Many exchanges take the fee out of the amount you type. Before confirming, check the "amount received" line on the withdrawal screen: it must be at least the amount on the checkout page; if the fee comes out of your amount, add it on top. An invoice up to 1% short still counts as paid. If more is missing, don't send a second transfer; contact support with your TxID. If you send more than the invoice, your balance is credited with the order amount, and you can contact support about the extra.
-- **The invoice expires.** Exchanges sometimes hold a withdrawal for manual review, which can take longer than 60 minutes. Make sure the coins are already in the exchange account before you click **Pay with crypto**. Expired before you sent anything: renew the invoice on the checkout page, or start a new top-up, and send to the address that's currently valid, not one you copied earlier. Expired after you already sent: don't send again; renew the invoice on the checkout page, and if that doesn't resolve it, contact support with your TxID.
+- **The invoice expires.** Exchanges sometimes hold a withdrawal for manual review, which can take longer than 60 minutes. Make sure the USDT is already in the exchange account before you click **Pay with crypto**. Expired before you sent anything: renew the invoice on the checkout page, or start a new top-up, and send to the address that's currently valid, not one you copied earlier. Expired after you already sent: don't send again; renew the invoice on the checkout page, and if that doesn't resolve it, contact support with your TxID.
 
 ### Where to find your TxID
 
@@ -124,7 +123,7 @@ The TxID (also called the transaction hash or Txn Hash) identifies your transfer
 
 When you contact support, include the TxID, the network, the amount, the time you sent it and the TeamoRouter account you topped up.
 
-Full walkthrough: [Pay for Claude and GPT APIs with Crypto (USDT, USDC)](https://teamorouter.com/blogs/pay-claude-with-usdt?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto).
+Full walkthrough: [Pay for Claude and GPT APIs with Crypto (USDT)](https://teamorouter.com/blogs/pay-claude-with-usdt?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto).
 
 ## Already have USDT on X Layer? Pay with OKX Wallet
 
