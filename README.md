@@ -94,10 +94,10 @@ The checkout accepts USDT, USDC and ETH. Which coins and networks it offers depe
 | Order amount | What the checkout offers |
 |---|---|
 | From $5 | ETH, USDC on BNB Smart Chain (BEP20), USDT on BNB Smart Chain (BEP20) |
-| From $20 | Also USDC on Base and USDT on Ethereum (ERC20) |
-| From $50 | Also USDT on Tron (TRC20) |
+| From $10 | Also USDC on Base and USDT on Ethereum (ERC20) |
+| From $30 | Also USDT on Tron (TRC20) |
 
-For small amounts, pick **USDT on BEP20**: it's available from $5, and Binance charges about 0.01 USDT to withdraw on BEP20, against about 1.5 USDT on TRC20. OKX doesn't offer USDT withdrawals on BEP20; from OKX, top up $20 or more and use ERC20, which costs less there than TRC20.
+For small amounts, pick **USDT on BEP20**: it's available from $5, and Binance charges about 0.01 USDT to withdraw on BEP20, against about 1.5 USDT on TRC20. OKX doesn't offer USDT withdrawals on BEP20; from OKX, top up $10 or more and use ERC20, which costs less there than TRC20.
 
 Send only the coin and network you picked; anything else sent to the checkout address doesn't count as payment. Withdrawal fees are set by each exchange and change over time, so check the fee on the withdrawal screen.
 
