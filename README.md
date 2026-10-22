@@ -2,7 +2,7 @@
 
 > Maintained by the TeamoRouter team. The gateway used in this guide is ours.
 
-OpenAI declined your card, or the API answers `403 unsupported_country_region_territory`? Call GPT models through [TeamoRouter](https://teamorouter.com/?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto) instead: the official OpenAI SDK talks to `api.teamorouter.com`, and you pay with USDT.
+OpenAI declined your card, or the API answers `403 unsupported_country_region_territory`? Call GPT models through [TeamoRouter](https://teamorouter.com/?utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto) instead: the official OpenAI SDK talks to `api.teamorouter.com`, and you pay with USDT.
 
 ## Short answer
 
@@ -60,7 +60,7 @@ Good to know:
 - List the models your key can call: `curl https://api.teamorouter.com/v1/models -H "Authorization: Bearer sk-teamo-xxxxxx"`.
 - Optional Fast mode: `service_tier: "fast"` (`gpt-5.6-sol` up to 2.5x faster, billed at 2x).
 
-Full reference: [API integration guide](https://teamorouter.com/docs/api-integration?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto).
+Full reference: [API integration guide](https://teamorouter.com/docs/api-integration?utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto).
 
 ## Codex CLI
 
@@ -81,7 +81,7 @@ echo 'export OPENAI_API_KEY="<your-TeamoRouter-key>"' >> ~/.zshrc   # ~/.bashrc 
 source ~/.zshrc
 ```
 
-Run `codex`. Windows (PowerShell) steps are in the [Codex CLI guide](https://teamorouter.com/docs/install-codex?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto). Inside a session, `/fast` toggles Fast mode.
+Run `codex`. Windows (PowerShell) steps are in the [Codex CLI guide](https://teamorouter.com/docs/install-codex?utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto). Inside a session, `/fast` toggles Fast mode.
 
 ## Top up with USDT, step by step
 
@@ -104,11 +104,11 @@ Send only the coin and network you picked; anything else sent to the checkout ad
 ### Steps
 
 1. Sign in to TeamoRouter, open the top-up dialog in the console and choose an amount ($5 or more). The amount decides which coins and networks the checkout offers.
-2. Click **Pay with crypto** (on a narrow screen the button reads **Crypto**). You're taken to the checkout page. If you signed up with a phone number, you'll be asked for an email address first.
+2. Click **Pay with crypto** (on a narrow screen the button reads **Crypto**). You're taken to the checkout page.
 3. The checkout page opens by asking you to choose a coin (USDT, USDC or ETH), then the network you'll send on. Only the networks available for your amount are listed. The page shows how much to send and a deposit address. The invoice is valid for **60 minutes**.
 4. In your exchange app, start a withdrawal (in a wallet, a send): choose **the same coin on the same network**, paste the address from the checkout page, and enter the amount so that what arrives is **no less than the amount on the page**.
 5. Wait for the network to confirm the transfer. Your balance is credited once the payment is confirmed, even if you close the checkout page. If it hasn't shown up yet, refresh the console in a while and don't pay again.
-6. When the balance arrives, [create an API key](https://teamorouter.com/dashboard?tab=api-keys&utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto).
+6. When the balance arrives, [create an API key](https://teamorouter.com/dashboard?tab=api-keys&utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto).
 
 ### What makes a crypto payment fail
 
@@ -125,7 +125,7 @@ The TxID (also called the transaction hash or Txn Hash) identifies your transfer
 
 When you contact support, include the TxID, the network, the amount, the time you sent it and the TeamoRouter account you topped up.
 
-Full walkthrough: [Pay for Claude and GPT APIs with Crypto (USDT)](https://teamorouter.com/blogs/pay-claude-with-usdt?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto).
+Full walkthrough: [Pay for Claude and GPT APIs with Crypto (USDT)](https://teamorouter.com/blogs/pay-claude-with-usdt?utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto).
 
 ## Already have USDT on X Layer? Pay with OKX Wallet
 
@@ -170,16 +170,21 @@ Errors on this route:
 
 **Do Codex usage limits apply?** The limits that reset every few hours or weekly belong to ChatGPT plans. With an API key you pay per token as long as you have balance.
 
-**Can the same key call Claude?** Yes, on the Anthropic native protocol: the Anthropic SDK with `base_url="https://api.teamorouter.com"` (no `/v1`), or [Claude Code](https://teamorouter.com/docs/install-claude-code?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto) via `ANTHROPIC_BASE_URL`. Through the OpenAI format, Claude can lose prompt caching and thinking.
+**Can the same key call Claude?** Yes, on the Anthropic native protocol: the Anthropic SDK with `base_url="https://api.teamorouter.com"` (no `/v1`), or [Claude Code](https://teamorouter.com/docs/install-claude-code?utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto) via `ANTHROPIC_BASE_URL`. Through the OpenAI format, Claude can lose prompt caching and thinking.
 
 **Are there payment fees?** The checkout page doesn't add a processing fee. You pay your exchange's withdrawal fee, or network gas if you send from a wallet.
 
 **Can I pay on my phone?** Yes. Open the checkout page on your phone and copy the address and amount into your exchange app.
 
-**What does it cost?** Per-token prices for each model are on the [pricing page](https://teamorouter.com/?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto#pricing). No subscription.
+**What does it cost?** Per-token prices for each model are on the [pricing page](https://teamorouter.com/?utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto#pricing). No subscription.
 
 ## Links
 
-- [TeamoRouter home](https://teamorouter.com/?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto)
-- [Pay with crypto: full guide](https://teamorouter.com/blogs/pay-claude-with-usdt?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto)
-- [Create an API key](https://teamorouter.com/dashboard?tab=api-keys&utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto)
+- [TeamoRouter home](https://teamorouter.com/?utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto)
+- [Pay with crypto: full guide](https://teamorouter.com/blogs/pay-claude-with-usdt?utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto)
+- [Create an API key](https://teamorouter.com/dashboard?tab=api-keys&utm_source=github&utm_medium=readme&utm_campaign=b6_pay-openai-api-with-crypto)
+
+## Related guides
+
+- [teamo-lab/claude-api-card-declined](https://github.com/teamo-lab/claude-api-card-declined): Claude API and Claude Code when Anthropic declines your card
+- [teamo-lab/openrouter-usdt](https://github.com/teamo-lab/openrouter-usdt): OpenRouter only takes USDC; what to do if you hold USDT
