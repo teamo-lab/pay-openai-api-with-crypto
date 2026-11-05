@@ -188,3 +188,4 @@ Errors on this route:
 
 - [teamo-lab/claude-api-card-declined](https://github.com/teamo-lab/claude-api-card-declined): Claude API and Claude Code when Anthropic declines your card
 - [teamo-lab/openrouter-usdt](https://github.com/teamo-lab/openrouter-usdt): OpenRouter only takes USDC; what to do if you hold USDT
+- [teamo-lab/new-llm-api-releases](https://github.com/teamo-lab/new-llm-api-releases): new model IDs, official prices and code examples on launch day
