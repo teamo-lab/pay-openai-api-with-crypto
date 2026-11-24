@@ -186,6 +186,7 @@ Errors on this route:
 
 ## Related guides
 
+- [Which AI APIs accept crypto? TeamoRouter, OpenRouter, NanoGPT, Venice, PayPerQ and LLMwithCrypto compared](https://teamorouter.com/blogs/llm-api-crypto-payment-compared?utm_source=github&utm_medium=readme&utm_campaign=pay-openai-api-with-crypto): coins, crypto fees, account requirement, minimum top-up and refunds, with a source link for every fact
 - [teamo-lab/claude-api-card-declined](https://github.com/teamo-lab/claude-api-card-declined): Claude API and Claude Code when Anthropic declines your card
 - [teamo-lab/openrouter-usdt](https://github.com/teamo-lab/openrouter-usdt): OpenRouter only takes USDC; what to do if you hold USDT
 - [teamo-lab/new-llm-api-releases](https://github.com/teamo-lab/new-llm-api-releases): new model IDs, official prices and code examples on launch day
